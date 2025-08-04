@@ -421,6 +421,11 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    author: Schema.Attribute.Enumeration<
+      [
+        '\u041A\u043E\u0440\u044F\u043A\u0438\u043D \u0415\u0433\u043E\u0440 \u0414\u043C\u0438\u0442\u0440\u0438\u0435\u0432\u0438\u0447',
+      ]
+    >;
     content: Schema.Attribute.RichText;
     cover_image: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
@@ -433,6 +438,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    read_time: Schema.Attribute.String;
     slug: Schema.Attribute.UID<'title'>;
     tags: Schema.Attribute.String;
     time: Schema.Attribute.Date;
@@ -454,6 +460,7 @@ export interface ApiCaseCase extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    category: Schema.Attribute.String;
     client: Schema.Attribute.String;
     content: Schema.Attribute.RichText;
     cover_image: Schema.Attribute.Media<
@@ -462,6 +469,7 @@ export interface ApiCaseCase extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    featured: Schema.Attribute.Boolean;
     gallery: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
@@ -470,6 +478,7 @@ export interface ApiCaseCase extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::case.case'> &
       Schema.Attribute.Private;
     preview_text: Schema.Attribute.String;
+    project_date: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'>;
     tags: Schema.Attribute.String;
@@ -496,6 +505,7 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     description: Schema.Attribute.RichText;
     excerpt: Schema.Attribute.String;
+    icon: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<

@@ -39,6 +39,15 @@
     },
     "excerpt": {
       "type": "string"
+    },
+    "author": {
+      "type": "enumeration",
+      "enum": [
+        "Корякин Егор Дмитриевич"
+      ]
+    },
+    "read_time": {
+      "type": "string"
     }
   }
 }
