@@ -2,6 +2,7 @@
   "name": "synecology-cms",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@8.0.0",
   "description": "A Strapi application",
   "scripts": {
     "build": "strapi build",
