@@ -32,7 +32,8 @@
   },
   "engines": {
     "node": ">=18.0.0 <=22.x.x",
-    "npm": ">=6.0.0"
+    "npm": ">=6.0.0",
+    "yarn": ">=1.22.0"
   },
   "strapi": {
     "uuid": "a92cecf6-0217-4317-b4fd-bcbf1a62dfc0",
