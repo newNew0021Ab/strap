@@ -48,6 +48,27 @@
     },
     "read_time": {
       "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "author_slug": {
+      "type": "enumeration",
+      "enum": [
+        "egor-koryakin"
+      ]
+    },
+    "featured": {
+      "type": "boolean"
+    },
+    "seo_title": {
+      "type": "string"
+    },
+    "seo_description": {
+      "type": "string"
+    },
+    "seo_keywords": {
+      "type": "string"
     }
   }
 }

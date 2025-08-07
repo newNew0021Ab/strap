@@ -58,6 +58,30 @@
     },
     "featured": {
       "type": "boolean"
+    },
+    "description": {
+      "type": "string"
+    },
+    "results": {
+      "type": "string"
+    },
+    "metrics": {
+      "type": "string"
+    },
+    "challenge": {
+      "type": "string"
+    },
+    "solution": {
+      "type": "string"
+    },
+    "timeline": {
+      "type": "string"
+    },
+    "completion_date": {
+      "type": "date"
+    },
+    "team_size": {
+      "type": "string"
     }
   }
 }

@@ -426,6 +426,8 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
         '\u041A\u043E\u0440\u044F\u043A\u0438\u043D \u0415\u0433\u043E\u0440 \u0414\u043C\u0438\u0442\u0440\u0438\u0435\u0432\u0438\u0447',
       ]
     >;
+    author_slug: Schema.Attribute.Enumeration<['egor-koryakin']>;
+    category: Schema.Attribute.String;
     content: Schema.Attribute.RichText;
     cover_image: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
@@ -434,11 +436,15 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     excerpt: Schema.Attribute.String;
+    featured: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     read_time: Schema.Attribute.String;
+    seo_description: Schema.Attribute.String;
+    seo_keywords: Schema.Attribute.String;
+    seo_title: Schema.Attribute.String;
     slug: Schema.Attribute.UID<'title'>;
     tags: Schema.Attribute.String;
     time: Schema.Attribute.Date;
@@ -461,7 +467,9 @@ export interface ApiCaseCase extends Struct.CollectionTypeSchema {
   };
   attributes: {
     category: Schema.Attribute.String;
+    challenge: Schema.Attribute.String;
     client: Schema.Attribute.String;
+    completion_date: Schema.Attribute.Date;
     content: Schema.Attribute.RichText;
     cover_image: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
@@ -469,6 +477,7 @@ export interface ApiCaseCase extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    description: Schema.Attribute.String;
     featured: Schema.Attribute.Boolean;
     gallery: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
@@ -477,11 +486,16 @@ export interface ApiCaseCase extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::case.case'> &
       Schema.Attribute.Private;
+    metrics: Schema.Attribute.String;
     preview_text: Schema.Attribute.String;
     project_date: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    results: Schema.Attribute.String;
     slug: Schema.Attribute.UID<'title'>;
+    solution: Schema.Attribute.String;
     tags: Schema.Attribute.String;
+    team_size: Schema.Attribute.String;
+    timeline: Schema.Attribute.String;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
